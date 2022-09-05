@@ -8,6 +8,7 @@
        http://www.liquibase.org/xml/ns/dbchangelog
        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
+<!-- ORGANIZATION TYPE TABLE (ORGTYPE)-->
 
     <changeSet id="1.0.0" author="lazarspa">
         <createTable remarks="Table for organization type" tableName="ORGTYPE">
@@ -23,5 +24,81 @@
     <changeSet id="1.0.1" author="lazarspa">
         <addPrimaryKey tableName="ORGTYPE" columnNames="ORGTYPE_ID"/>
     </changeSet>
+
+
+<!--    ORGANIZATION TABLE(ORG)-->
+
+    <changeSet id="1.0.2" author="lazarspa">
+        <createTable remarks="Table for organization entity" tableName="ORG">
+            <column name="ORG_ID" type="NUMBER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ORG_IDENT" type="VARCHAR(12)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="ORG_ACTIVE" type="BOOLEAN" defaultValueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ORG_NAME" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="ORG_ADDRESS" type="VARCHAR(100)"/>
+            <column name="ORG_PHONE" type="VARCHAR(20)"/>
+            <column name="ORG_EMAIL" type="VARCHAR(50)"/>
+            <column name="ORG_TYPE" type="NUMBER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.3" author="lazarspa">
+        <addPrimaryKey tableName="ORG" columnNames="ORG_ID"/>
+    </changeSet>
+    <changeSet id="1.0.4" author="lazarspa">
+        <addForeignKeyConstraint baseTableName="ORG" baseColumnNames="ORG_TYPE" constraintName="ORG_FK1" referencedTableName="ORGTYPE"
+                                 referencedColumnNames="ORGTYPE_ID"/>
+    </changeSet>
+
+    <!--    PRACTITIONER TABLE(PRACT)-->
+
+    <changeSet id="1.0.5" author="lazarspa">
+        <createTable remarks="Table for practitioner entity" tableName="PRACT">
+            <column name="PRACT_ID" type="NUMBER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRACT_IDENT" type="VARCHAR(12)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="PRACT_ACTIVE" type="BOOLEAN" defaultValueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRACT_NAME" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRACT_SURN" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRACT_GEND" type="VARCHAR(30)"/>
+            <column name="PRACT_BDAY" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRACT_ADDRESS" type="VARCHAR(100)"/>
+            <column name="PRACT_PHONE" type="VARCHAR(20)"/>
+            <column name="PRACT_EMAIL" type="VARCHAR(50)"/>
+            <column name="PRACT_QUALI" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRACT_ORG" type="NUMBER"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.6" author="lazarspa">
+        <addPrimaryKey tableName="PRACT" columnNames="PRACT_ID" constraintName="PRACT_PK"/>
+    </changeSet>
+    <changeSet id="1.0.7" author="lazarspa">
+        <addForeignKeyConstraint baseTableName="PRACT" baseColumnNames="PRACT_ORG" constraintName="PRACT_FK1" referencedTableName="ORG"
+                                 referencedColumnNames="ORG_ID"/>
+    </changeSet>
+
 
 </databaseChangeLog>
