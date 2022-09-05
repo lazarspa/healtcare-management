@@ -10,4 +10,6 @@
 
 <!--    ADD TABLES TO DATABASE-->
 
+    <include file="db/changelog/db.changelog-1.0.xml"/>
+    
 </databaseChangeLog>

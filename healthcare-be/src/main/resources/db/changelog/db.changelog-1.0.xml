@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+       http://www.liquibase.org/xml/ns/dbchangelog
+       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+
+    <changeSet id="1.0.0" author="lazarspa">
+        <createTable remarks="Table for organization type" tableName="ORGTYPE">
+            <column name="ORGTYPE_ID" type="NUMBER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ORGTYPE_NAME" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.1" author="lazarspa">
+        <addPrimaryKey tableName="ORGTYPE" columnNames="ORGTYPE_ID"/>
+    </changeSet>
+
+</databaseChangeLog>
