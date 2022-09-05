@@ -1,7 +1,7 @@
-package it.lazar.spasojevic.healthcarebe.persist.model;
+package it.lazar.spasojevic.healthcare.persist.model;
 
-import it.lazar.spasojevic.healthcarebe.persist.model.enumeration.Gender;
-import it.lazar.spasojevic.healthcarebe.persist.model.enumeration.PractitionerQualification;
+import it.lazar.spasojevic.healthcare.persist.model.enumeration.Gender;
+import it.lazar.spasojevic.healthcare.persist.model.enumeration.PractitionerQualification;
 import lombok.*;
 
 import javax.persistence.*;

@@ -1,4 +1,4 @@
-package it.lazar.spasojevic.healthcarebe;
+package it.lazar.spasojevic.healthcare;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

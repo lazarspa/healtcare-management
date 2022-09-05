@@ -1,4 +1,4 @@
-package it.lazar.spasojevic.healthcarebe.persist.model;
+package it.lazar.spasojevic.healthcare.persist.model;
 
 import lombok.*;
 

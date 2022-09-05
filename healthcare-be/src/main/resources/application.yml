@@ -6,6 +6,13 @@ spring:
     password: password
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: false
+
+dataSource:
+  driverClassName: org.h2.Driver
+  url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  username: sa
+  password: sa
 
 hibernate:
   format_sql: true

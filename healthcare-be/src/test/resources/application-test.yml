@@ -1,0 +1,23 @@
+dataSource:
+  driverClassName: org.h2.Driver
+  url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  username: sa
+  password: sa
+
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  sql:
+    init:
+      mode: always
+      platform: h2
+
+
+server:
+  servlet:
+    context-path: /healthcare
+  port: ${PORT:8080}
+

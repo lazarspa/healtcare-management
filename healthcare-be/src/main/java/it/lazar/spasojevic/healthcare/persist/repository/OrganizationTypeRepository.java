@@ -1,6 +1,6 @@
-package it.lazar.spasojevic.healthcarebe.persist.repository;
+package it.lazar.spasojevic.healthcare.persist.repository;
 
-import it.lazar.spasojevic.healthcarebe.persist.model.OrganizationTypeDO;
+import it.lazar.spasojevic.healthcare.persist.model.OrganizationTypeDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;

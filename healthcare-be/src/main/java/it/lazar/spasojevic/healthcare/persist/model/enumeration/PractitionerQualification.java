@@ -1,4 +1,4 @@
-package it.lazar.spasojevic.healthcarebe.persist.model.enumeration;
+package it.lazar.spasojevic.healthcare.persist.model.enumeration;
 
 public enum PractitionerQualification {
 

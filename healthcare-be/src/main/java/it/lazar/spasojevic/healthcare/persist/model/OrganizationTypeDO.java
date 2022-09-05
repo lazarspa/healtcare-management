@@ -1,4 +1,4 @@
-package it.lazar.spasojevic.healthcarebe.persist.model;
+package it.lazar.spasojevic.healthcare.persist.model;
 
 import lombok.*;
 
@@ -11,6 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+@ToString
 @Entity
 @Table(name = "ORGTYPE")
 public class OrganizationTypeDO implements Serializable {
