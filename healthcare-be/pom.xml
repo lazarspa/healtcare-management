@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>it.lazar.spasojevic</groupId>
-	<artifactId>healthcare-be</artifactId>
+	<artifactId>healthcare</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>healthcare-be</name>
+	<name>healthcare</name>
 	<description>backed for healthcare management system</description>
 	<properties>
 		<java.version>17</java.version>
