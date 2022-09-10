@@ -14,7 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OutputDTO implements Serializable {
+public class GenericOutputDTO implements Serializable {
 
     private static final long serialVersionUID= 1279394198684406268L;
 
@@ -22,5 +22,4 @@ public class OutputDTO implements Serializable {
 
     private Pair<String,String> errorMessage;
 
-    //TODO choose correct way to use it
 }
