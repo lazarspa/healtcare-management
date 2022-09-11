@@ -4,7 +4,6 @@ dataSource:
   username: sa
   password: sa
 
-
 spring:
   jpa:
     hibernate:
@@ -14,6 +13,8 @@ spring:
     init:
       mode: always
       platform: h2
+  liquibase:
+    enabled: false
 
 
 server:

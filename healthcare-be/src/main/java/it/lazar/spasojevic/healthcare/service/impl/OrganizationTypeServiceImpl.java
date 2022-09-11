@@ -50,29 +50,29 @@ public class OrganizationTypeServiceImpl implements OrganizationTypeService {
         Optional<OrganizationTypeDO> orgType = organizationTypeRepository.findById(inputDto.getId());
 
         if(orgType.isEmpty()) {
-            genericOutputDTO.setErrorMessage(Pair.of("id", "Organization type with ID {" + inputDto.getId() + "} does not exist"));
+            genericOutputDTO.getErrorMessage().put("id","Organization type with ID: {" + inputDto.getId() + "} does not exist");
             genericOutputDTO.setSuccess(false);
         }
 
         return genericOutputDTO;
     }
 
-    @Override
-    @Transactional
     public GenericOutputDTO save(OrganizationTypeDTO inputDto) {
 
         GenericOutputDTO genericOutputDTO =  new GenericOutputDTO();
         genericOutputDTO.setSuccess(true);
 
-        try{
             OrganizationTypeDO organizationTypeDO = organizationTypeMapper.toEntity(inputDto);
+            organizationTypeDO.setId(null);
             organizationTypeRepository.save(organizationTypeDO);
+        try{
         }
         catch (Exception e){
-            genericOutputDTO.setErrorMessage(Pair.of("id","Error executing organization type save operation"));
+            genericOutputDTO.getErrorMessage().put("error","Error executing save operation ");
             genericOutputDTO.setSuccess(false);
+            System.out.println("ERRORRRRRRRR" + e.getMessage());
         }
 
-        return null;
+        return genericOutputDTO;
     }
 }

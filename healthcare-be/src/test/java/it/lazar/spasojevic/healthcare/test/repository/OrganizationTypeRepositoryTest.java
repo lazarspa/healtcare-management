@@ -40,8 +40,6 @@ public class OrganizationTypeRepositoryTest {
 
         assertEquals(2,byId1.get().getId());
 
-        List<OrganizationTypeDO> all = organizationTypeRepository.findAll();
-        System.out.println(all);
     }
 
 }

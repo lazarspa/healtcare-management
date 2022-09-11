@@ -101,4 +101,8 @@
     </changeSet>
 
 
+    <changeSet id="1.0.8" author="lazarspa">
+        <addAutoIncrement tableName="ORGTYPE" columnName="ORGTYPE_ID"/>
+    </changeSet>
+
 </databaseChangeLog>

@@ -8,6 +8,8 @@ import lombok.ToString;
 import org.springframework.data.util.Pair;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @Data
 @NoArgsConstructor
@@ -20,6 +22,6 @@ public class GenericOutputDTO implements Serializable {
 
     private boolean success;
 
-    private Pair<String,String> errorMessage;
+    private Map<String,String> errorMessage = new HashMap<>();
 
 }
